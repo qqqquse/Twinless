@@ -31,10 +31,13 @@
 
 Для запуска приложения на Windows:
 
+- Скачать архив, распаковать в удобную папку
+
 - Запустить "twinkless.exe"
 
 Для запуска приложения на Linux(необходимо иметь систему на x11 или установленный xwayland):
 
+	git clone https://github.com/qqqquse/Twinless.git
 	chmod +x twinless
 	./twinless
 
