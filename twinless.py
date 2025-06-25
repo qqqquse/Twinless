@@ -1,5 +1,6 @@
-import tkinter as tk
-import hashLin
+import os
+import hashlib
+import shutil
 from PIL import Image
 
 def log(text):
