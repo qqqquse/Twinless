@@ -10,6 +10,8 @@ def log(text):
         output_widget.update()
 output_widget = None  # Связь с интерфейсом
 
+# === Обработка изображений ===
+
 def get_image_fingerprint(path):
     try:
         with Image.open(path) as img:
@@ -20,3 +22,17 @@ def get_image_fingerprint(path):
     except Exception as e:
         log(f"[Ошибка] Не удалось обработать файл {path}: {e}")
         return None
+
+def move_file_to_backup(file_path, backup_folder):
+    os.makedirs(backup_folder, exist_ok=True)
+    filename = os.path.basename(file_path)
+    destination = os.path.join(backup_folder, filename)
+
+    counter = 1
+    while os.path.exists(destination):
+        name, ext = os.path.splitext(filename)
+        destination = os.path.join(backup_folder, f"{name}_{counter}{ext}")
+        counter += 1
+
+    shutil.move(file_path, destination)
+    log(f"[Дубликат] Перемещён в backup: {file_path}")
