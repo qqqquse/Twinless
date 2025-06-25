@@ -124,6 +124,8 @@ def find_and_handle_duplicates(folder, app=None):
     log("🛑 Удаления не было — только перенос в backup", tag="info")
     status_label.config(text="Готово ✅", foreground="#28a745")  # зелёный
 
+
+    # === ГРАФИЧЕСКИЙ ИНТЕРФЕЙС ===
     # Активируем кнопку открыть папку
     open_folder_btn.configure(state="normal")
 
