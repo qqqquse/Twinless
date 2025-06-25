@@ -67,4 +67,10 @@ def find_and_handle_duplicates(folder, app=None):
                 move_file_to_backup(file_path, duplicates_folder)
                 duplicates_found += 1
             else:
-                fingerprints[fingerprint] = file_path    
+                fingerprints[fingerprint] = file_path   
+
+    log("\n=== РЕЗУЛЬТАТ ===")
+    log(f"Всего изображений обработано: {total_files}")
+    log(f"Дубликатов найдено и перемещено: {duplicates_found}")
+    log(f"Дубликаты перемещены в: {duplicates_folder}")
+    log("Ничего не удалено без копии! Проверь backup и при желании очисти вручную.")
